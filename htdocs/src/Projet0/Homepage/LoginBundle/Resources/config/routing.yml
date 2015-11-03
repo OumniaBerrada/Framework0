@@ -1,0 +1,23 @@
+projet0_homepage_login_homepage:
+    path:     /index
+    defaults: { _controller: Projet0HomepageLoginBundle:Default:index }
+
+home:
+    path:     /
+    defaults: { _controller: Projet0HomepageLoginBundle:Default:login }
+
+test:
+    path:     /test
+    defaults: { _controller: Projet0HomepageLoginBundle:Default:login }
+
+mail:
+    path:     /mail
+    defaults: { _controller: Projet0HomepageLoginBundle:Default:mail }
+
+admin:
+    path:     /admin
+    defaults: { _controller: Projet0HomepageLoginBundle:Admin:index }
+
+formmail:
+    path:     /formmail
+    defaults: { _controller: Projet0HomepageLoginBundle:Default:formmail }

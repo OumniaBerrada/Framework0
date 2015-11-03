@@ -1,0 +1,22 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block stylesheets %}
+     <link href="{{ asset('bundles/projet0homepagelogin/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" /> 
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+     <link href="{{ asset('bundles/projet0homepagelogin/css/login.css') }}" type="text/css" rel="stylesheet" />
+     <link href="{{ asset('bundles/projet0homepagelogin/css/navbar.css') }}" type="text/css" rel="stylesheet" /> 
+{% endblock %}
+
+{% block script %}
+    <script src="bundles/projet0homepagelogin/js/ie-emulation-modes-warning.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bundles/projet0homepagelogin/js/bootstrap.min.js"></script>
+    <script src="bundles/projet0homepagelogin/js/ie10-viewport-bug-workaround.js"></script>
+{% endblock %}
+
+{% block fos_user_content %}
+<div class="logo"></div>
+<div class="login-block">
+    <h1>Register</h1>
+{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+</div>
+{% endblock fos_user_content %}

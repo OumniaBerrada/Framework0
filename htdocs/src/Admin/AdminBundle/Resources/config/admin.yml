@@ -1,0 +1,12 @@
+services:
+    sonata.admin.users:
+        class: Admin\AdminBundle\Admin\ProduitAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Users" }
+        arguments:
+            - ~
+            - Projet0\Homepage\LoginBundle\Entity\User
+            - AdminAdminBundle:AdminCrud
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+            - [ setTemplate, [dashboard, AdminAdminBundle:ProduitAdmin:dashboard.html.twig]]

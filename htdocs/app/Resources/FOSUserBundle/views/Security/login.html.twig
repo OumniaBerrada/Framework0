@@ -1,0 +1,40 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/projet0homepagelogin/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" /> 
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('bundles/projet0homepagelogin/css/login.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/projet0homepagelogin/css/navbar.css') }}" type="text/css" rel="stylesheet" /> 
+{% endblock %}
+
+{% block script %}
+    <script src="bundles/projet0homepagelogin/js/ie-emulation-modes-warning.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bundles/projet0homepagelogin/js/bootstrap.min.js"></script>
+    <script src="bundles/projet0homepagelogin/js/ie10-viewport-bug-workaround.js"></script>
+{% endblock %}
+
+{% block fos_user_content %}
+{% if app.user %}
+    {% render controller('Projet0HomepageLoginBundle:Default:index') %}
+{% else %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<div class="logo"></div>
+<div class="login-block">
+    <h1>Login</h1>
+		<form id="form" class="form-inline" action="{{ path("fos_user_security_check") }}" method="post">
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+		 <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Username" required="required" />
+		 <input type="password" id="password" name="_password" placeholder="Password" required="required" />
+		  <input type="submit" class="btn btn-warning" id="_submit" name="_submit" value="Sign in" />
+		  <a href="{{ path('fos_user_registration_register') }}">Sign up</a>
+		</form>
+</div>
+{% endif %}
+{% endblock fos_user_content %}
+
