@@ -2,7 +2,7 @@ services:
     sonata.admin.users:
         class: Admin\AdminBundle\Admin\ProduitAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Users" }
+            - { name: sonata.admin, manager_type: orm, group: "Users", label: "Users" }
         arguments:
             - ~
             - Projet0\Homepage\LoginBundle\Entity\User
@@ -10,3 +10,14 @@ services:
         calls:
             - [ setTranslationDomain, [AdminAdminBundle]]
             - [ setTemplate, [dashboard, AdminAdminBundle:ProduitAdmin:dashboard.html.twig]]
+
+    sonata.admin.groups:
+        class: Admin\AdminBundle\Admin\GroupAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Groups", label: "Groups" }
+        arguments:
+            - ~
+            - Projet0\Homepage\LoginBundle\Entity\Group
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]

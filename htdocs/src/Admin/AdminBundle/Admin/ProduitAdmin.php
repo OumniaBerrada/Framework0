@@ -14,33 +14,25 @@ class ProduitAdmin extends Admin
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
-        if ($this->id($this->getSubject())) {
-            $formMapper
-                ->add('username')
-                ->add('email')
-                ->add('firstname')
-                ->add('lastname')
-                ->add('roles')
-                ->add('enabled')
-                ->add('password', 'text', array(
-                    'label' => 'password'
-                    ))
-            ;
+        $groupOption = array(
+            'class' => 'Projet0\Homepage\LoginBundle\Entity\Group',
+            'property' => 'name',
+            'multiple' => true
+            );
+        if (!$this->id($this->getSubject())) {
+            
         }
-        else {
-            $formMapper
-                ->add('username')
-                ->add('email')
-                ->add('firstname')
-                ->add('lastname')
-                ->add('roles')
-                ->add('enabled')
-                ->add('password', 'text', array(
-                    'label' => 'password',
-                    'data' => 'Admin'
-                    ))
-            ;
-        }
+        $formMapper
+            ->add('username')
+            ->add('email')
+            ->add('firstname')
+            ->add('lastname')
+            ->add('groups', 'entity', $groupOption)
+            ->add('enabled')
+            ->add('password', 'text', array(
+                'label' => 'password'
+                ))
+        ;
     }
 
     // Fields to be shown on filter forms
@@ -51,7 +43,7 @@ class ProduitAdmin extends Admin
             ->add('email')
             ->add('firstname')
             ->add('lastname')
-            ->add('roles')
+            ->add('groups')
             ->add('enabled')
             ->add('password')
         ;
@@ -65,7 +57,7 @@ class ProduitAdmin extends Admin
             ->add('email')
             ->add('firstname')
             ->add('lastname')
-            ->add('roles')
+            ->add('groups')
             ->add('enabled')
             ->add('password')
             ->add('_action', 'actions', array('actions'=> array(
@@ -83,7 +75,7 @@ class ProduitAdmin extends Admin
             ->add('email')
             ->add('firstname')
             ->add('lastname')
-            ->add('roles')
+            ->add('groups')
         ;
     }
 }
