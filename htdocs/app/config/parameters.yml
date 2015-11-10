@@ -2,7 +2,7 @@
 parameters:
     database_driver: pdo_mysql
     database_host: 127.0.0.1
-    database_port: null
+    database_port: 3306
     database_name: test
     database_user: toto
     database_password: toto123
@@ -11,4 +11,4 @@ parameters:
     mailer_user: berrada.oumnia@gmail.com
     mailer_password: dfqrwftbwiftrbtq
     locale: en
-    secret: ThisTokenIsNotSoSecretChangeIt
+    secret: c8c27900b857da8a39768de311e9b03da03e8fb9
