@@ -1,0 +1,17 @@
+
+#form{	
+	border: 1px solid black;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 8%;
+    padding-left: 15%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#identi{
+	text-align: left;
+    color: black;
+    font-size: 143%;
+}
