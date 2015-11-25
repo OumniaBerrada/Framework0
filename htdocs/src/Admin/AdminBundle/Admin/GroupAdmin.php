@@ -34,7 +34,6 @@ class GroupAdmin extends Admin
             ->add('id')
             ->add('name')
             ->add('roles')
-
         ;
     }
 

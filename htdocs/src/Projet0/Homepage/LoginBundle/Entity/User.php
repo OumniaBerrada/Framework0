@@ -3,7 +3,7 @@
 namespace Projet0\Homepage\LoginBundle\Entity;
 
 
-use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Entity\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -48,7 +48,6 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        $this->addRole('ROLE_USER');
     }
 
     /**

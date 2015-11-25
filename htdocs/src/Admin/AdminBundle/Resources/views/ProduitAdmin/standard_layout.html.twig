@@ -99,7 +99,7 @@ file that was distributed with this source code.
                 {% endblock %}
                 {% block logo %}
                     {% spaceless %}
-                    <a class="logo" href="{{ url('sonata_admin_dashboard') }}">
+                    <a class="logo" href="{{ url('projet0_homepage_login_homepage') }}">
                         {% if 'single_image' == admin_pool.getOption('title_mode') or 'both' == admin_pool.getOption('title_mode') %}
                             <img src="{{ asset(admin_pool.titlelogo) }}" alt="{{ admin_pool.title }}">
                         {% endif %}
@@ -112,12 +112,12 @@ file that was distributed with this source code.
                 {% block sonata_nav %}
                     {% if admin_pool is defined %}
                         <nav class="navbar navbar-static-top" role="navigation">
-                            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    {#        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
-                            </a>
+                            </a> #}
 
                             <div class="navbar-left">
                                 {% block sonata_breadcrumb %}
@@ -156,14 +156,14 @@ file that was distributed with this source code.
                                             </a>
                                             {% include admin_pool.getTemplate('add_block') %}
                                         </li>
-                                        <li class="dropdown user-menu">
+                      {#                  <li class="dropdown user-menu">
                                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                                             </a>
                                             <ul class="dropdown-menu dropdown-user">
                                                 {% include admin_pool.getTemplate('user_block') %}
                                             </ul>
-                                        </li>
+                                        </li> #}
                                     </ul>
                                 </div>
                             {% endblock %}
@@ -253,7 +253,7 @@ file that was distributed with this source code.
                         <section class="content-header">
                             {% block sonata_page_content_header %}
                                 {% block sonata_page_content_nav %}
-                                    {% if _tab_menu is not empty or _actions is not empty %}
+                                  {#  {% if _tab_menu is not empty or _actions is not empty %}
                                         <nav class="navbar navbar-default" role="navigation">
                                             {% block tab_menu_navbar_header %}
                                                 {% if _navbar_title is not empty %}
@@ -277,11 +277,11 @@ file that was distributed with this source code.
                                                                 {{ _actions|raw }}
                                                             </ul>
                                                         </li>
-                                                    </ul>
+                                                    </ul> 
                                                 {% endif %}
                                             </div>
                                         </nav>
-                                    {% endif %}
+                                    {% endif %} #}
                                 {% endblock sonata_page_content_nav %}
 
                             {% endblock sonata_page_content_header %}

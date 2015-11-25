@@ -14,9 +14,13 @@
 {% endblock %}
 
 {% block fos_user_content %}
-<div class="logo"></div>
-<div class="login-block">
-    <h1>Register</h1>
-{% include "FOSUserBundle:Registration:register_content.html.twig" %}
-</div>
+{% if app.user %}
+    {% render controller('Projet0HomepageLoginBundle:Default:index') %}
+{% else %}
+	<div class="logo"></div>
+	<div class="login-block">
+    	<h1>Register</h1>
+	{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+	</div>
+{% endif %}
 {% endblock fos_user_content %}

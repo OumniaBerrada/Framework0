@@ -64,7 +64,6 @@ class AdminCrudController extends Controller
                             'SonataAdminBundle'
                         )
                     );
-                    echo('ok');
 
                     // redirect to edit mode
                     return $this->redirectTo($object);

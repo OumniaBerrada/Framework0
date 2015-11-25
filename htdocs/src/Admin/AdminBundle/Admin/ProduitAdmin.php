@@ -41,11 +41,8 @@ class ProduitAdmin extends Admin
         $datagridMapper
             ->add('username')
             ->add('email')
-            ->add('firstname')
-            ->add('lastname')
             ->add('groups')
             ->add('enabled')
-            ->add('password')
         ;
     }
 

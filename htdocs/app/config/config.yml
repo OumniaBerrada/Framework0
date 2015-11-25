@@ -75,13 +75,18 @@ fos_user:
     registration:
         form:
             type: projet_client_registration
-
+            handler: add.group
 services:
     projet.registration.form.type:
         class: Projet0\Homepage\LoginBundle\Form\RegistrationFormType
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: projet_client_registration }
+    add.group:
+        class: Projet0\Homepage\LoginBundle\Form\Handler\RegistrationFormHandler
+        arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator", "@service_container"]
+        scope: request
+        public: false
 
 sonata_block:
     default_contexts: [cms]
@@ -121,3 +126,5 @@ sonata_admin:
         history_revision_timestamp:     SonataAdminBundle:CRUD:history_revision_timestamp.html.twig
         short_object_description:       SonataAdminBundle:Helper:short-object-description.html.twig
         search_result_block:            SonataAdminBundle:Block:block_search_result.html.twig
+    title:                'Framework00'
+    title_logo:           bundles/sonataadmin/logo_title.png
